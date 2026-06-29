@@ -3,6 +3,7 @@
  *
  * SPDX-License-Identifier: MIT
  */
+
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
@@ -12,49 +13,77 @@
         screenshot: screenshot {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&macro_press &kp LGUI>
-                     , <&macro_press &kp LSHFT>
-                     , <&macro_tap &kp S>
-                     , <&macro_release &kp LSHFT>
-                     , <&macro_release &kp LGUI>;
+            bindings =
+                <&macro_press>,
+                <&kp LGUI>,
+                <&macro_press>,
+                <&kp LSHFT>,
+                <&macro_tap>,
+                <&kp S>,
+                <&macro_release>,
+                <&kp LSHFT>,
+                <&macro_release>,
+                <&kp LGUI>;
         };
 
         select_word: select_word {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&macro_press &kp LCTRL>
-                     , <&macro_tap &kp RIGHT>
-                     , <&macro_release &kp LCTRL>
-                     , <&macro_press &kp LCTRL>
-                     , <&macro_press &kp LSHFT>
-                     , <&macro_tap &kp LEFT>
-                     , <&macro_release &kp LSHFT>
-                     , <&macro_release &kp LCTRL>;
+            bindings =
+                <&macro_press>,
+                <&kp LCTRL>,
+                <&macro_tap>,
+                <&kp RIGHT>,
+                <&macro_release>,
+                <&kp LCTRL>,
+                <&macro_press>,
+                <&kp LCTRL>,
+                <&macro_press>,
+                <&kp LSHFT>,
+                <&macro_tap>,
+                <&kp LEFT>,
+                <&macro_release>,
+                <&kp LSHFT>,
+                <&macro_release>,
+                <&kp LCTRL>;
         };
 
         select_line: select_line {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&macro_tap &kp HOME>
-                     , <&macro_press &kp LSHFT>
-                     , <&macro_tap &kp END>
-                     , <&macro_release &kp LSHFT>;
+            bindings =
+                <&macro_tap>,
+                <&kp HOME>,
+                <&macro_press>,
+                <&kp LSHFT>,
+                <&macro_tap>,
+                <&kp END>,
+                <&macro_release>,
+                <&kp LSHFT>;
         };
 
         word_left: word_left {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&macro_press &kp LCTRL>
-                     , <&macro_tap &kp LEFT>
-                     , <&macro_release &kp LCTRL>;
+            bindings =
+                <&macro_press>,
+                <&kp LCTRL>,
+                <&macro_tap>,
+                <&kp LEFT>,
+                <&macro_release>,
+                <&kp LCTRL>;
         };
 
         word_right: word_right {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&macro_press &kp LCTRL>
-                     , <&macro_tap &kp RIGHT>
-                     , <&macro_release &kp LCTRL>;
+            bindings =
+                <&macro_press>,
+                <&kp LCTRL>,
+                <&macro_tap>,
+                <&kp RIGHT>,
+                <&macro_release>,
+                <&kp LCTRL>;
         };
     };
 
@@ -64,22 +93,22 @@
         default_layer {
             display-name = "Base";
             bindings = <
-&kp ESC           &kp N1  &kp N2  &kp N3        &kp N4        &kp N5                                        &kp N6  &kp N7        &kp N8      &kp N9   &kp N0    &kp DELETE
-&kp TAB           &kp Q   &kp W   &kp E         &kp R         &kp T                                         &kp Y   &kp U         &kp I       &kp O    &kp P     &kp BACKSPACE
-&kp LEFT_SHIFT    &kp A   &kp S   &kp D         &kp F         &kp G                                         &kp H   &kp J         &kp K       &kp L    &kp SEMI  &kp SQT
-&kp LEFT_CONTROL  &kp Z   &kp X   &kp C         &kp V         &kp B   &select_word       &select_line    &kp N   &kp M         &kp COMMA   &kp DOT  &kp FSLH  &kp RSHFT
-                                  &kp CAPSLOCK  &kp LEFT_ALT  &mo 1   &kp ENTER            &kp SPACE        &mo 1   &kp LEFT_WIN  &screenshot
+&kp ESC           &kp N1  &kp N2  &kp N3        &kp N4        &kp N5                                &kp N6  &kp N7        &kp N8       &kp N9   &kp N0    &kp DELETE
+&kp TAB           &kp Q   &kp W   &kp E         &kp R         &kp T                                 &kp Y   &kp U         &kp I        &kp O    &kp P     &kp BACKSPACE
+&kp LEFT_SHIFT    &kp A   &kp S   &kp D         &kp F         &kp G                                 &kp H   &kp J         &kp K        &kp L    &kp SEMI  &kp SQT
+&kp LEFT_CONTROL  &kp Z   &kp X   &kp C         &kp V         &kp B   &select_word    &select_line  &kp N   &kp M         &kp COMMA    &kp DOT  &kp FSLH  &kp RSHFT
+                                  &kp CAPSLOCK  &kp LEFT_ALT  &mo 1   &kp ENTER       &kp SPACE     &mo 1   &kp LEFT_WIN  &screenshot
             >;
         };
 
         function_layer {
             display-name = "Function";
             bindings = <
-&kp F1      &kp F2        &kp F3          &kp F4          &kp F5        &kp F6                             &kp F7             &kp F8           &kp F9     &kp F10           &kp F11            &kp F12
-&kp GRAVE   &trans        &kp PAGE_DOWN   &kp UP_ARROW    &kp PAGE_UP   &kp PRINTSCREEN                    &kp C_VOLUME_UP    &kp KP_SUBTRACT  &kp UNDER  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &trans
-&trans      &kp HOME      &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT     &kp END                            &kp C_VOLUME_DOWN  &kp KP_PLUS      &kp EQUAL  &kp LEFT_BRACE    &kp RIGHT_BRACE    &trans
-&trans      &trans        &trans          &word_left      &word_right    &trans           &trans    &trans  &kp C_MUTE         &bt BT_CLR       &bt BT_SEL 0 &bt BT_SEL 1   &kp BACKSLASH      &trans
-                                          &trans          &trans        &trans           &trans    &trans  &trans             &trans           &trans
+&kp F1     &kp F2    &kp F3          &kp F4          &kp F5       &kp F6                             &kp F7             &kp F8           &kp F9      &kp F10           &kp F11            &kp F12
+&kp GRAVE  &trans    &kp PAGE_DOWN   &kp UP_ARROW    &kp PAGE_UP  &kp PRINTSCREEN                    &kp C_VOLUME_UP    &kp KP_SUBTRACT  &kp UNDER   &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &trans
+&trans     &kp HOME  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT    &kp END                            &kp C_VOLUME_DOWN  &kp KP_PLUS      &kp EQUAL   &kp LEFT_BRACE    &kp RIGHT_BRACE    &trans
+&trans     &trans    &trans          &word_left      &word_right  &trans           &trans    &trans  &kp C_MUTE         &bt BT_CLR       &bt BT_NXT  &bt BT_PRV        &kp BACKSLASH      &trans
+                                     &trans          &trans       &trans           &trans    &trans  &trans             &trans           &trans
             >;
         };
     };
