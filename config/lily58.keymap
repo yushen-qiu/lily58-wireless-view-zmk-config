@@ -77,7 +77,7 @@
             bindings = <
 &kp F1      &kp F2        &kp F3          &kp F4          &kp F5        &kp F6                             &kp F7             &kp F8           &kp F9     &kp F10           &kp F11            &kp F12
 &kp GRAVE   &trans        &kp PAGE_DOWN   &kp UP_ARROW    &kp PAGE_UP   &kp PRINTSCREEN                    &kp C_VOLUME_UP    &kp KP_SUBTRACT  &kp UNDER  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &trans
-&trans      &kp HOME      &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT     &kp END                            &trans             &trans           &kp EQUAL  &kp LEFT_BRACE    &kp RIGHT_BRACE    &trans
+&trans      &kp HOME      &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT     &kp END                            &kp C_VOLUME_DOWN  &kp KP_PLUS      &kp EQUAL  &kp LEFT_BRACE    &kp RIGHT_BRACE    &trans
 &trans      &trans        &trans          &word_left      &word_right    &trans           &trans    &trans  &kp C_MUTE         &bt BT_CLR       &bt BT_SEL 0 &bt BT_SEL 1   &kp BACKSLASH      &trans
                                           &trans          &trans        &trans           &trans    &trans  &trans             &trans           &trans
             >;
