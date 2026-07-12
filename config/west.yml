@@ -10,6 +10,7 @@ manifest:
       remote: zmkfirmware
       revision: v0.3
       import: app/west.yml
+      
     - name: nice-view-custom
       remote: yushen-qiu
       revision: v0.3.0
