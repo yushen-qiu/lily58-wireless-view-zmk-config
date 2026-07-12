@@ -11,6 +11,6 @@ manifest:
       import: app/west.yml
     - name: nice-view-custom
       remote: yushen-qiu
-      revision: v0.3.0
+      revision: main
   self:
     path: config
