@@ -85,6 +85,32 @@
                 <&macro_release>,
                 <&kp LCTRL>;
         };
+
+        /* --- new bracket-pair macros --- */
+
+        paren_macro: paren_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_tap>,
+                <&kp LPAR>,
+                <&macro_tap>,
+                <&kp RPAR>,
+                <&macro_tap>,
+                <&kp LEFT>;
+        };
+
+        bracket_macro: bracket_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_tap>,
+                <&kp LBKT>,
+                <&macro_tap>,
+                <&kp RBKT>,
+                <&macro_tap>,
+                <&kp LEFT>;
+        };
     };
 
     keymap {
@@ -97,7 +123,7 @@
 &kp TAB           &kp Q   &kp W   &kp E         &kp R         &kp T                                 &kp Y   &kp U         &kp I        &kp O    &kp P     &kp BACKSPACE
 &kp LEFT_SHIFT    &kp A   &kp S   &kp D         &kp F         &kp G                                 &kp H   &kp J         &kp K        &kp L    &kp SEMI  &kp SQT
 &kp LEFT_CONTROL  &kp Z   &kp X   &kp C         &kp V         &kp B   &select_word    &select_line  &kp N   &kp M         &kp COMMA    &kp DOT  &kp FSLH  &kp RSHFT
-                                  &kp CAPSLOCK  &kp LEFT_ALT  &mo 1   &kp ENTER       &kp SPACE     &mo 1   &kp LEFT_WIN  &screenshot
+                                  &paren_macro  &kp LEFT_ALT  &mo 1   &kp ENTER       &kp SPACE     &mo 1   &kp LEFT_WIN  &screenshot
             >;
         };
 
@@ -108,7 +134,7 @@
 &kp GRAVE  &kp INSERT  &kp PRINTSCREEN  &kp UP_ARROW    &kp PG_DN    &kp PG_UP                    &kp C_VOLUME_UP    &kp KP_SUBTRACT  &kp UNDER   &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &trans
 &trans     &kp HOME    &kp LEFT_ARROW   &kp DOWN_ARROW  &kp RIGHT    &kp END                      &kp C_VOLUME_DOWN  &kp KP_PLUS      &kp EQUAL   &kp LEFT_BRACE    &kp RIGHT_BRACE    &trans
 &trans     &trans      &trans           &word_left      &word_right  &trans     &trans    &trans  &kp C_MUTE         &bt BT_NXT       &bt BT_PRV  &bt BT_CLR        &kp BACKSLASH      &trans
-                                        &trans          &trans       &trans     &trans    &trans  &trans             &trans           &trans
+                                        &bracket_macro   &trans       &trans     &trans    &trans  &trans             &trans           &trans
             >;
         };
     };
