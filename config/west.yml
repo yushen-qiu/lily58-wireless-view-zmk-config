@@ -4,13 +4,16 @@ manifest:
       url-base: https://github.com/zmkfirmware
     - name: yushen-qiu
       url-base: https://github.com/yushen-qiu
+
   projects:
     - name: zmk
       remote: zmkfirmware
-      revision: v0.3
+      revision: main
       import: app/west.yml
+
     - name: nice-view-custom
       remote: yushen-qiu
-      revision: v0.3.0
+      revision: main
+
   self:
     path: config
